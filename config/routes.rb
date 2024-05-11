@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookings
   get 'flight_searches/new'
   get 'flight_searches/index'
   get 'flight_searches/create'

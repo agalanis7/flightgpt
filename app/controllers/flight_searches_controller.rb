@@ -19,7 +19,7 @@ end
         flash[:alert] = "Error: #{response.code} - #{response.message}"
         @flights = []
       end
-      render :create
+      redirect_to @search
     else
       render :new
     end
