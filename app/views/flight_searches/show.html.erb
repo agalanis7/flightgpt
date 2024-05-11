@@ -1,0 +1,35 @@
+<h1>Flight Search Results</h1>
+
+<% if @results.present? %>
+  <% @results.each do |listing| %>
+    <div class="listing">
+      <h2>Airline Information</h2>
+      <% listing['airline'].each do |airline| %>
+        <div class="airline-info">
+          <p><strong>Airline Code:</strong> <%= airline['code'] %></p>
+          <p><strong>Airline Name:</strong> <%= airline['name'] %></p>
+          <!-- Add more airline information as needed -->
+        </div>
+      <% end %>
+      
+      <h2>Airport Information</h2>
+      <% listing['airport'].each do |airport| %>
+        <div class="airport-info">
+          <p><strong>Airport Code:</strong> <%= airport['code'] %></p>
+          <p><strong>Airport Name:</strong> <%= airport['name'] %></p>
+          <p><strong>City:</strong> <%= airport['city'] %></p>
+          <p><strong>Country:</strong> <%= airport['country'] %></p>
+          <!-- Add more airport information as needed -->
+        </div>
+      <% end %>
+      
+      <h2>Price Information</h2>
+      <div class="price-info">
+        <p><strong>Price:</strong> $<%= listing['totalPriceWithDecimal']['price'] %></p>
+        <!-- Add more price information as needed -->
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>No flights found</p>
+<% end %>

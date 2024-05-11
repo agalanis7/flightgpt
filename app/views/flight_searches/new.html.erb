@@ -1,0 +1,23 @@
+<!-- app/views/flight_searches/new.html.erb -->
+<h1>Search Flights</h1>
+
+<%= form_with(model: @search, url: flight_searches_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :origin %>
+    <%= form.text_field :origin, placeholder: "Enter origin airport code or city" %>
+  </div>
+
+  <div>
+    <%= form.label :destination %>
+    <%= form.text_field :destination, placeholder: "Enter destination airport code or city" %>
+  </div>
+
+  <div>
+    <%= form.label :departure_date %>
+    <%= form.date_field :departure_date, placeholder: "Select departure date" %>
+  </div>
+
+  <div>
+    <%= form.submit "Search" %>
+  </div>
+<% end %>
