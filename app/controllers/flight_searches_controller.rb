@@ -23,6 +23,7 @@ end
     else
       render :new
     end
+  end
   private
 
 def search_params
@@ -50,6 +51,5 @@ def parse_flight_search_results(response_body)
   # Parse the response body and extract flight information
   # Example: JSON.parse(response_body)
   # Return an array of flight objects
-end
 end
 end

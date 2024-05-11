@@ -2,7 +2,7 @@
 <p>Find me in app/views/flight_searches/index.html.erb</p>
 <h1>Search Flights</h1>
 
-<%= form_with(model: @search, url: flight_searches_path, method: :get) do |form| %>
+<%= form_with(model: @search, url: flight_searches_path) do |form| %>
   <div>
     <%= form.label :origin %>
     <%= form.text_field :origin, placeholder: "Enter origin airport code or city" %>

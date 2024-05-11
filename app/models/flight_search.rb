@@ -1,5 +1,3 @@
-
-
 class FlightSearch < ApplicationRecord
     include HTTParty
     base_uri 'https://priceline-com-provider.p.rapidapi.com/flights'
@@ -18,7 +16,7 @@ class FlightSearch < ApplicationRecord
         },
         headers: headers
       }
-      response = get("/search", options)
+      response = post("/search", options)
       JSON.parse(response.body)
     end
   end
